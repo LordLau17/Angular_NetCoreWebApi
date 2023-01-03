@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherForecastClient, WorldCupClient } from 'src/client/angularNetWebApiClient';
+import { Subject } from 'rxjs';
+import { WeatherForecast, WeatherForecastClient, WorldCupClient } from 'src/client/angularNetWebApiClient';
 
 @Component({
   selector: 'app-root',
@@ -9,29 +10,29 @@ import { WeatherForecastClient, WorldCupClient } from 'src/client/angularNetWebA
 export class AppComponent implements OnInit {
   title = 'Angular-NetWebApi';
 
+  public weatherForecasts: WeatherForecast[] = [];
   public wcWinner: string = '';
 
   constructor(private weatherForecastClient: WeatherForecastClient, private worldCupClient: WorldCupClient){
 
   }
 
-  ngOnInit(): void {
+  ngOnInit() : void {
+    this.getWeather();
     this.getWorldCupWinner();
   }
 
-  public getTest(): string {
+  public getTest() : string {
     return 'Success';
   }
 
-  public getWeather(): string {
+  public getWeather() : void {
     this.weatherForecastClient.get().subscribe((values) => {
-      return values[0].summary;
+      this.weatherForecasts = values;
     });
-
-    return 'ErrorLau';
   }
 
-  private getWorldCupWinner() {
+  private getWorldCupWinner() : void {
     this.worldCupClient.getWinner().subscribe((value) => {
       this.wcWinner = value;
     });

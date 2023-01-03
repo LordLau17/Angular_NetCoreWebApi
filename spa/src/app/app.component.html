@@ -1,7 +1,21 @@
-Test: {{ getTest() }}
+<p>Test: {{ getTest() }}</p>
 
-Weather info: {{ getWeather() }}
+Weather info:
 
-World Cup Winner: {{ wcWinner }}
+<div style="border: 1px solid lightgrey;">
+    <ul>
+        <li *ngFor="let item of weatherForecasts;  index as i;">
+            <span>Date: {{ item.date }}</span>
+            <br/>
+            <span>Summary: {{item.summary }} </span>
+            <br/>
+            <span>Celcius: {{item.temperatureC }} </span>
+            <br/>
+            <span>Fahrenheit: {{item.temperatureF }} </span>
+        </li>
+    </ul>
+</div>
+
+<p>World Cup Winner: {{ wcWinner }}</p>
 
 <router-outlet></router-outlet>
