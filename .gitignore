@@ -396,7 +396,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-spa/coreV2Client/.angular/cache
+*/.angular/cache
 .sass-cache/
 /connect.lock
 /coverage
