@@ -5,7 +5,7 @@ import {  HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WeatherForecastClient, WorldCupClient } from 'src/client/coreV2ClientApi';
+import { WeatherForecastClient, WorldCupClient } from 'src/client/angularNetWebApiClient';
 
 @NgModule({
   declarations: [

@@ -145,9 +145,9 @@ export class WorldCupClient {
 
 export class WeatherForecast implements IWeatherForecast {
     date?: Date;
+    summary?: string | undefined;
     temperatureC?: number;
     temperatureF?: number;
-    summary?: string | undefined;
 
     constructor(data?: IWeatherForecast) {
         if (data) {
@@ -161,9 +161,9 @@ export class WeatherForecast implements IWeatherForecast {
     init(_data?: any) {
         if (_data) {
             this.date = _data["date"] ? new Date(_data["date"].toString()) : <any>undefined;
+            this.summary = _data["summary"];
             this.temperatureC = _data["temperatureC"];
             this.temperatureF = _data["temperatureF"];
-            this.summary = _data["summary"];
         }
     }
 
@@ -177,18 +177,18 @@ export class WeatherForecast implements IWeatherForecast {
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["date"] = this.date ? formatDate(this.date) : <any>undefined;
+        data["summary"] = this.summary;
         data["temperatureC"] = this.temperatureC;
         data["temperatureF"] = this.temperatureF;
-        data["summary"] = this.summary;
         return data;
     }
 }
 
 export interface IWeatherForecast {
     date?: Date;
+    summary?: string | undefined;
     temperatureC?: number;
     temperatureF?: number;
-    summary?: string | undefined;
 }
 
 function formatDate(d: Date) {

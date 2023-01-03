@@ -1,4 +1,4 @@
-# CoreV2ClientApi
+# Angular-NetWebApi
 # Required
 - .NET 7.0
 - Typescript 4.8

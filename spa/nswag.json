@@ -69,7 +69,7 @@
       "enumNameGeneratorType": null,
       "serviceHost": null,
       "serviceSchemes": null,
-      "output": "src/client/coreV2ClientApi.ts",
+      "output": "src/client/angularNetWebApiClient.ts",
       "newLineBehavior": "Auto",
       "injectHttpClient": true,
       "disposeHttpClient": false
