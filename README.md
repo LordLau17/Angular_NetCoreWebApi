@@ -1,8 +1,14 @@
 # CoreV2ClientApi
 # Required
 - .NET 7.0
-- npm install -g nswag
+- Typescript 4.8
+- Node v18
 
-# Nswag
-- Add new definition with: 'nswag new'
-- Run any definition with: 'nswag run'
+# Initial setup
+- spa -> 'npm install'
+
+# Generate Angular httpclient
+- Run 'npm install -g nswag'
+- Run any Nswag definition with: 'nswag run'
+- or 
+- Add new Nswag definition with: 'nswag new'
