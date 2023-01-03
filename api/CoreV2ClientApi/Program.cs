@@ -5,7 +5,6 @@ var appName = typeof(Program).Assembly.GetName().Name;
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApiDocument(x =>
 {
     x.Title = appName;
@@ -17,6 +16,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseOpenApi();
     app.UseSwaggerUi3();
 }
