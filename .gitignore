@@ -362,6 +362,8 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
+
+####################
 ##### Angular #####
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
@@ -394,7 +396,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
+*/.angular/cache
 .sass-cache/
 /connect.lock
 /coverage
@@ -405,3 +407,4 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
