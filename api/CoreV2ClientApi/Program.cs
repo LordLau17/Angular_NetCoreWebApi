@@ -4,7 +4,6 @@ var appName = typeof(Program).Assembly.GetName().Name;
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddOpenApiDocument(x =>
 {
     x.Title = appName;
