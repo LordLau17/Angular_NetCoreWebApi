@@ -1,14 +1,17 @@
-<div class="jumbotron">
+<div class="container pt-3">
     <div class="row">
         <div class="col">
-            Weather info: <p>Test: {{ getTest() }}</p>
+            <p>Test: {{ getTest() }}</p>
         </div>
     </div>
 
     <div class="row">
-        <div class="col" style="border: 1px solid lightgrey;">
+        <div class="col-12">
+            Weather info:
+        </div>
+        <div class="col-12" style="border: 1px solid lightgrey;">
             <ul>
-                <li *ngFor="let item of weatherForecasts;  index as i;">
+                <li *ngFor="let item of weatherForecasts; index as i;">
                     <span>Date: {{ item.date }}</span>
                     <br />
                     <span>Summary: {{item.summary }} </span>
@@ -23,10 +26,32 @@
 
     <div class="row">
         <div class="col">
-            <p>
-                <ngb-alert type="custom" [dismissible]="false"><strong>Whoa!</strong> This is a custom alert.</ngb-alert>
-            </p>
             <p>World Cup Winner: {{ wcWinner }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <p><ngb-progressbar type="success" [value]="25">25</ngb-progressbar></p>
+            <p>
+                <ngb-progressbar type="info" [value]="50">Copying file <b>2 of 4</b>...</ngb-progressbar>
+            </p>
+            <p>
+                <ngb-progressbar type="warning" [value]="75" [striped]="true"
+                    [animated]="true"><i>50%</i></ngb-progressbar>
+            </p>
+            <p><ngb-progressbar type="danger" [value]="100" [striped]="true">Completed!</ngb-progressbar></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <p *ngFor="let alert of alerts">
+                <ngb-alert [type]="alert.type" (closed)="close(alert)">{{ alert.message }}</ngb-alert>
+            </p>
+            <p>
+                <button type="button" class="btn btn-primary" (click)="reset()">Reset</button>
+            </p>
         </div>
     </div>
 </div>
