@@ -1,21 +1,38 @@
-<p>Test: {{ getTest() }}</p>
+<div class="jumbotron">
+    <div class="row">
+        <div class="col">
+            Weather info: <p>Test: {{ getTest() }}</p>
+        </div>
+    </div>
 
-Weather info:
+    <div class="row">
+        <div class="col" style="border: 1px solid lightgrey;">
+            <ul>
+                <li *ngFor="let item of weatherForecasts;  index as i;">
+                    <span>Date: {{ item.date }}</span>
+                    <br />
+                    <span>Summary: {{item.summary }} </span>
+                    <br />
+                    <span>Celcius: {{item.temperatureC }} </span>
+                    <br />
+                    <span>Fahrenheit: {{item.temperatureF }} </span>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-<div style="border: 1px solid lightgrey;">
-    <ul>
-        <li *ngFor="let item of weatherForecasts;  index as i;">
-            <span>Date: {{ item.date }}</span>
-            <br/>
-            <span>Summary: {{item.summary }} </span>
-            <br/>
-            <span>Celcius: {{item.temperatureC }} </span>
-            <br/>
-            <span>Fahrenheit: {{item.temperatureF }} </span>
-        </li>
-    </ul>
+    <div class="row">
+        <div class="col">
+            <p>
+                <ngb-alert type="custom" [dismissible]="false"><strong>Whoa!</strong> This is a custom alert.</ngb-alert>
+            </p>
+            <p>World Cup Winner: {{ wcWinner }}</p>
+        </div>
+    </div>
 </div>
 
-<p>World Cup Winner: {{ wcWinner }}</p>
+
+
+
 
 <router-outlet></router-outlet>
