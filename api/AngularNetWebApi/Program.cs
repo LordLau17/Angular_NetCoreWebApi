@@ -8,7 +8,7 @@ var appName = typeof(Program).Assembly.GetName().Name;
 builder.Host.UseSerilog((context, conf) =>
 {
     conf
-        .WriteTo.Seq(context.Configuration["SeqServerUrl"], Serilog.Events.LogEventLevel.Debug)
+        .WriteTo.Seq(context.Configuration["SeqServerUrl"]!, Serilog.Events.LogEventLevel.Debug)
         .Enrich.FromLogContext()
         .Enrich.WithMachineName()
         .Enrich.WithEnvironmentUserName();
